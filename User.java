@@ -90,6 +90,9 @@ public class User {
      * ]
      */
     public boolean removeFollowee(String name) {
+        if (name == null || fCount == 0) {
+            return false;
+        }
         name = name.toLowerCase();
         for (int i = 0; i < fCount; i++) {
             if (follows[i].toLowerCase().equals(name)) { // find the index of the name we want to remove
