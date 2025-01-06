@@ -42,7 +42,7 @@ public class Network {
             return null;
         }
         for (int i = 0; i < users.length; i++) {
-            if (users[i] != null && users[i].getName().equals(name)) {
+            if (users[i] != null && users[i].getName().toLowerCase().equals(name.toLowerCase())) {
                 return this.users[i]; // return the object not the name
             }
         }
