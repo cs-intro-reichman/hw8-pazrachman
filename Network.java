@@ -126,7 +126,7 @@ public class Network {
         int maxCount = 0;
         String popular = "";
         for (int i = 0; i < userCount; i++) {
-            String name = users[i].getName();
+            String name = users[i].getName().toLowerCase();
             int count = 0;
             for (int j = 0; j < userCount; j++) {
                 if (users[j] != null && users[j].follows(name)) {
@@ -151,7 +151,7 @@ public class Network {
         //// Replace the following statement with your code
         int count = 0;
         for (int i = 0; i < userCount; i++) {
-            if (users[i] != null && users[i].follows(name)) {
+            if (users[i] != null && users[i].follows(name.toLowerCase())) {
                 count++;
             }
         }
