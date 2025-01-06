@@ -67,7 +67,7 @@ public class User {
      * does nothing and returns false;
      */
     public boolean addFollowee(String name) {
-        name = name.toLowerCase();
+
         if (this.follows(name)) {
             return false;
 
