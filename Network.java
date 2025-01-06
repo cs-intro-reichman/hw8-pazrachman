@@ -42,7 +42,7 @@ public class Network {
             return null;
         }
         for (int i = 0; i < users.length; i++) {
-            if (users[i] != null && users[i].getName().equals(name)) {
+            if (users[i] != null && users[i].getName().toLowerCase().equals(name.toLowerCase())) {
                 return this.users[i]; // return the object not the name
             }
         }
@@ -83,7 +83,7 @@ public class Network {
         //// Replace the following statement with your code
         User user1 = this.getUser(name1);
         User user2 = this.getUser(name2);
-        if (user1 == null || user2 == null || name1.equals(name2)) {
+        if (user1 == null || user2 == null || name1.toLowerCase().equals(name2.toLowerCase())) {
             return false;
         }
         return user1.addFollowee(name2);

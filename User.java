@@ -51,11 +51,7 @@ public class User {
      */
     public boolean follows(String name) {
         //// Replace the following statement with your code
-        char firstLatter = name.charAt(0);
-        if (firstLatter >= 'a' && firstLatter <= 'z') {
-            firstLatter = (char) (firstLatter - 'a');
-        }
-        String newName = firstLatter + name.substring(1);
+        name = name.toLowerCase();
         for (int i = 0; i < follows.length; i++) {
             if (follows[i] != null && follows[i].equals(name)) {
                 return true;
@@ -70,11 +66,7 @@ public class User {
      * does nothing and returns false;
      */
     public boolean addFollowee(String name) {
-        char firstLatter = name.charAt(0);
-        if (firstLatter >= 'a' && firstLatter <= 'z') {
-            firstLatter = (char) (firstLatter - 'a');
-        }
-        String newName = firstLatter + name.substring(1);
+        name = name.toLowerCase();
         if (this.follows(name)) {
             return false;
 
@@ -97,11 +89,7 @@ public class User {
      * ]
      */
     public boolean removeFollowee(String name) {
-        char firstLatter = name.charAt(0);
-        if (firstLatter >= 'a' && firstLatter <= 'z') {
-            firstLatter = (char) (firstLatter - 'a');
-        }
-        String newName = firstLatter + name.substring(1);
+        name = name.toLowerCase();
         if (follows(name) == false) {
             return false;
         }
@@ -124,15 +112,9 @@ public class User {
      */
     public int countMutual(User other) {
         int count = 0;
-        char firstLatter = name.charAt(0);
-        if (firstLatter >= 'a' && firstLatter <= 'z') {
-            firstLatter = (char) (firstLatter - 'a');
-        }
-        String newName = firstLatter + name.substring(1);
-
         for (int i = 0; i < this.fCount; i++) {
             for (int j = 0; j < other.getfCount(); j++) {
-                if (this.follows[i].equals(other.getfFollows()[j])) {
+                if (this.follows[i].toLowerCase().equals(other.getfFollows()[j].toLowerCase())) {
                     count++;
                 }
             }
