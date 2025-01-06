@@ -118,7 +118,7 @@ public class User {
         int count = 0;
         for (int i = 0; i < this.fCount; i++) {
             for (int j = 0; j < other.getfCount(); j++) {
-                if (this.follows[i].toLowerCase().equals(other.getfFollows()[j].toLowerCase())) {
+                if (this.follows[i].equals(other.getfFollows()[j])) {
                     count++;
                 }
             }
