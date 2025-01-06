@@ -33,6 +33,10 @@ public class Network {
      * Notice that the method receives a String, and returns a User object.
      * user[] -> [user(dani),user(omer),user(michal),.......]
      */
+    public int getUserCount() {
+        return userCount;
+    }
+
     public User getUser(String name) {
         if (name == null || name.isEmpty()) {
             return null;
