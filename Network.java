@@ -123,13 +123,16 @@ public class Network {
      */
     public String mostPopularUser() {
         //// Replace the following statement with your code
+        if (userCount == 0) {
+            return null;
+        }
         int maxCount = 0;
         String popular = "";
         for (int i = 0; i < userCount; i++) {
-            String name = users[i].getName().toLowerCase();
+            String name = users[i].getName();
             int count = 0;
             for (int j = 0; j < userCount; j++) {
-                if (users[j] != null && users[j].follows(name)) {
+                if (users[j] != null && users[j].follows(name.toLowerCase())) {
                     count++;
                 }
             }
