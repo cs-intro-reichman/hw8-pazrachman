@@ -169,7 +169,7 @@ public class Network {
         for (int i = 0; i < userCount; i++) {
             if (users[i] != null) {
                 list.append(users[i].toString());
-                list.append("\n");
+                list.append(" -> ");
             }
         }
         return list.toString();

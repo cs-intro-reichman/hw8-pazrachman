@@ -90,19 +90,21 @@ public class User {
      * ]
      */
     public boolean removeFollowee(String name) {
-
         name = name.toLowerCase();
         for (int i = 0; i < fCount; i++) {
             if (follows[i].toLowerCase().equals(name)) { // find the index of the name we want to remove
                 for (int j = i; j < fCount - 1; j++) { // fix the array to be without null value inside
                     follows[j] = follows[j + 1];
                 }
+                follows[fCount - 1] = null;
+                fCount--;
+
+                return true;
+
             }
         }
-        follows[fCount - 1] = null;
-        fCount--;
 
-        return true;
+        return false;
     }
 
     /**
